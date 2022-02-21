@@ -15,7 +15,7 @@ async function displayFamilies() {
     const families = await getFamilies();
     // clear out the familiesEl
     familiesEl.textContent = '';
-    console.log(families);
+    // console.log(families);
     for (let family of families) { 
 
         const bunniesEl = renderFamily(family);
