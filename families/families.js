@@ -36,7 +36,7 @@ async function displayFamilies() {
     // append the familyEl to the familiesEl
     return familiesEl;
 }
-await displayFamilies();
+displayFamilies();
 
 window.addEventListener('load', async () => {
     const families = await getFamilies();
