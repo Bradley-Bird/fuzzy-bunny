@@ -12,7 +12,7 @@ export function renderFamily(family) {
 export function renderBunny(bunny) {
     const div = document.createElement('div');
     const p = document.createElement('p');
-    div.classList.add('bunnies')
+    div.classList.add('bunnies');
     p.classList.add('bunny');
     p.textContent = bunny.name;
     div.append(p);
