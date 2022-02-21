@@ -16,16 +16,19 @@ async function displayFamilies() {
     // clear out the familiesEl
     familiesEl.textContent = '';
     // console.log(families);
-    for (let family of families) { 
-
+    for (let family of families) {
         const bunniesEl = renderFamily(family);
 
         for (let bunny of family.fuzzy_bunnies) {
             const bunnyEl = renderBunny(bunny);
             //    add an event listener to the bunny el. On click, delete the bunny, then refetch and redisplay all families.
-            // bunnyEl.addEventListener('click',()=>{
-                bunniesEl.append(bunnyEl);
-            }
+            bunnyEl.addEventListener('click', async () => {
+                // console.log(bunny);
+                await deleteBunny(bunny.id);
+                displayFamilies();
+            });
+            bunniesEl.append(bunnyEl);
+        }
         // })
         familiesEl.append(bunniesEl);
     }
